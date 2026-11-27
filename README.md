@@ -96,8 +96,6 @@ macOS app bundle (universal, macOS 11+, with file associations):
 
 The app is ad-hoc signed but not notarized: on another Mac, the first time you open it, right-click the app and choose **Open**.
 
-The GitHub Actions workflow (`.github/workflows/build.yml`) builds Windows and macOS binaries on every push.
-
 Test files can be regenerated with the scripts in `samples/` (`make_pclxl_sample.py`, `make_pcl5_sample.py`, `make_emf_xps_samples.py`).
 
 ## Known limitations
