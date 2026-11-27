@@ -2615,6 +2615,15 @@ impl App {
             ui.label(format!("Version {}", env!("CARGO_PKG_VERSION")));
             ui.add_space(6.0);
             ui.label("Reads PCL XL (PCL 6), PCL 5, HP-GL/2, PostScript, EMF spool and XPS print files, with Windows .SHD job records.");
+            ui.add_space(6.0);
+            ui.label("Copyright © 2026 ozanam and contributors. Free software under the GNU GPL v3 or later; it comes with ABSOLUTELY NO WARRANTY.");
+            ui.horizontal(|ui| {
+                ui.hyperlink_to("Source code", "https://github.com/ozanam/Print-Job-Viewer");
+                ui.label("·");
+                ui.hyperlink_to("Licence", "https://www.gnu.org/licenses/gpl-3.0.html");
+                ui.label("·");
+                ui.hyperlink_to("Third-party notices", "https://github.com/ozanam/Print-Job-Viewer/blob/main/THIRD-PARTY-NOTICES.txt");
+            });
             ui.add_space(8.0);
             egui::Grid::new("keys").num_columns(2).spacing([16.0, 4.0]).show(ui, |ui| {
                 for (k, v) in [

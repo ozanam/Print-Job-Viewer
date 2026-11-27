@@ -18,6 +18,7 @@ lipo -create -output "$APP/Contents/MacOS/PrintFileViewer" \
   target/aarch64-apple-darwin/release/printfileviewer \
   target/x86_64-apple-darwin/release/printfileviewer
 cp assets/AppIcon.icns "$APP/Contents/Resources/AppIcon.icns"
+cp LICENSE THIRD-PARTY-NOTICES.txt "$APP/Contents/Resources/"
 
 cat > "$APP/Contents/Info.plist" <<PLIST
 <?xml version="1.0" encoding="UTF-8"?>

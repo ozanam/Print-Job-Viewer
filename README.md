@@ -127,3 +127,15 @@ Test files can be regenerated with the scripts in `samples/` (`make_pclxl_sample
 | `src/output.rs` | printing and sending to printers |
 | `src/fonts.rs`, `src/imgdec.rs` | fonts, font identification, image decoding |
 | `src/render.rs`, `src/doc.rs`, `src/geom.rs` | rasterizer, page model, geometry |
+
+## Licence
+
+Copyright (C) 2026 ozanam and contributors.
+
+Print File Viewer is free software: you can redistribute it and/or modify it under the terms of the [GNU General Public License](LICENSE) as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. It is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+In short: you can use, change and share it freely, but if you share a modified version you must publish its source code under the same licence.
+
+It's built on open-source libraries that keep their own licences (MIT, Apache-2.0, BSD and others, plus the fonts bundled with egui under the SIL Open Font and Ubuntu Font licences). Their notices are in [THIRD-PARTY-NOTICES.txt](THIRD-PARTY-NOTICES.txt).
+
+PCL is a trademark of HP Inc. and PostScript is a trademark of Adobe. This project isn't affiliated with or endorsed by either company.
