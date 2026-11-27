@@ -1,0 +1,11 @@
+# Link the C runtime statically so the Windows .exe needs no Visual C++
+# redistributable or MinGW DLLs (fully portable single file).
+[target.x86_64-pc-windows-msvc]
+rustflags = ["-C", "target-feature=+crt-static"]
+
+[target.aarch64-pc-windows-msvc]
+rustflags = ["-C", "target-feature=+crt-static"]
+
+[target.x86_64-pc-windows-gnu]
+linker = "x86_64-w64-mingw32-gcc"
+rustflags = ["-C", "target-feature=+crt-static", "-C", "link-args=-static -static-libgcc"]

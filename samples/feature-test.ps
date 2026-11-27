@@ -1,0 +1,164 @@
+%!PS-Adobe-3.0
+%%Title: PostScript feature test
+%%Creator: hand written
+%%For: tester
+%%Pages: 2
+%%DocumentMedia: A4 595 842 0 () ()
+%%LanguageLevel: 3
+%%EndComments
+%%BeginProlog
+/cshow { dup stringwidth pop 2 div neg 0 rmoveto show } bind def
+%%EndProlog
+%%BeginSetup
+%%BeginFeature: *PageSize A4
+<< /PageSize [595 842] >> setpagedevice
+%%EndFeature
+%%BeginFeature: *Duplex DuplexNoTumble
+<< /Duplex true /Tumble false >> setpagedevice
+%%EndFeature
+<< /NumCopies 3 >> setpagedevice
+%%EndSetup
+%%Page: 1 1
+/Helvetica-Bold findfont 28 scalefont setfont
+297 790 moveto (PostScript feature test) cshow
+/Times-Roman findfont dup length dict begin { 1 index /FID ne { def } { pop pop } ifelse } forall
+ /Encoding ISOLatin1Encoding def currentdict end /Times-ISO exch definefont pop
+/Times-ISO findfont 14 scalefont setfont
+50 750 moveto (Re-encoded Times: \351t\351, na\357ve, \374ber, \243 5) show
+/Courier findfont 12 scalefont setfont
+50 730 moveto 2 0 (ashow spacing) ashow
+50 712 moveto { pop pop 3 0 rmoveto } (kshow kerned) kshow
+% Type 3 font
+8 dict begin
+/FontType 3 def /FontMatrix [.001 0 0 .001 0 0] def /FontBBox [0 0 1000 1000] def
+/Encoding 256 array def 0 1 255 { Encoding exch /.notdef put } for
+Encoding 97 /square put Encoding 98 /circle put
+/CharProcs 3 dict def
+CharProcs begin
+/.notdef {} def
+/square { 0 0 moveto 800 0 lineto 800 800 lineto 0 800 lineto closepath fill } def
+/circle { 400 400 400 0 360 arc fill } def
+end
+/BuildGlyph { 1000 0 0 0 1000 1000 setcachedevice exch /CharProcs get exch 2 copy known not { pop /.notdef } if get exec } def
+/BuildChar { 1 index /Encoding get exch get 1 index /BuildGlyph get exec } def
+currentdict end /Shapes exch definefont pop
+/Shapes findfont 20 scalefont setfont
+0 0.5 0 setrgbcolor
+50 680 moveto (ababab) show
+0 setgray
+% vector graphics
+newpath 100 560 60 0 360 arc closepath gsave 1 0 0 setrgbcolor fill grestore 4 setlinewidth stroke
+gsave 0 0 1 setrgbcolor 200 500 120 120 rectfill grestore
+gsave 0.2 0.6 0.2 0.1 setcmykcolor 360 500 moveto 420 620 lineto 480 500 lineto closepath fill grestore
+gsave [10 5] 0 setdash 2 setlinewidth 50 480 moveto 545 480 lineto stroke grestore
+% clipping
+gsave 400 360 moveto 0 0 0 setrgbcolor 400 360 70 0 360 arc clip
+ 1 0.5 0 setrgbcolor 0 10 200 { 330 add 290 exch 4 140 rectfill } for
+ newpath 330 290 moveto 470 430 lineto 8 setlinewidth 0 0 1 setrgbcolor stroke
+grestore
+% inline hex image (gray 8x8 checker)
+gsave 50 300 translate 120 120 scale
+8 8 8 [8 0 0 -8 0 8] {<
+00FF00FF00FF00FF FF00FF00FF00FF00 00FF00FF00FF00FF FF00FF00FF00FF00
+00FF00FF00FF00FF FF00FF00FF00FF00 00FF00FF00FF00FF FF00FF00FF00FF00>} image
+grestore
+% imagemask with colour
+gsave 200 300 translate 100 100 scale 0.8 0 0.8 setrgbcolor
+16 16 true [16 0 0 -16 0 16] {<FFFF8001BFFDA005A7E5A425A5A5A5A5A5A5A425A7E5A005BFFD8001FFFF0000>} imagemask
+grestore
+% Flate + ASCII85 colour image via dictionary
+gsave 330 300 translate 200 100 scale
+/DeviceRGB setcolorspace
+<< /ImageType 1 /Width 64 /Height 32 /BitsPerComponent 8 /Decode [0 1 0 1 0 1]
+   /ImageMatrix [64 0 0 -32 0 32] /DataSource currentfile /ASCII85Decode filter /FlateDecode filter >> image
+GaoM8&_k/&'SQe.+;b66?k<`u5qiQK_&sQtK4#6!JjD'r#/ME!"G>Wd?k<`u5qiQK_&sQtK4#6!J
+jJmSh-Y,nqj`#iEs.&cJ1/b\O9>ahZG9:%&JthQ!b27*?m;6O9EbiUR=H_?(U+#X!k,mB^_'ZT\,
+pFH:LGF*$Z#tJJXo%SYSW)u%K`oN;#l025U(._8-LUIRD;fF(Usbc!dB2ni#to'49]JNQTueb(2*
+k8!hI,.5S31:La%6Z8RrqfM[W#gOcbGL1)A8*-6g%B<5]?9M3oK.&PHXX@Z)d+*0HMB/$]r\6oH7
+'aAsPtfnkA+H]^k[+;0SP71_J9,U-l`<9,6dM-NJiOdelbEYg/n*[6lj;kt1SM)6DpO]LNfdYW??
+"Gr_'.++BC,R+me`)&d_(eLY=@gPk=,,%Y',n,WuKIJXBYTsts[_u(\O]Y2b&o.eL@O'i)CaB.>S
+O=m2Q\Zms'!]AP!f<+/,&ro>,q]gu`)S"J\4IAIGDT5W+]1fn-#/:'6mM5fBI,hTS]"SrOQjlC14
+:$3Afr>A$tU-@Oc1bGQI04i1:k\/`fQV1Qni_#94f>Wb:I3ER?`^]Z^1,l2DW"j<[Np]ab2ErR7Q
+H_'?_A,O?(E.12!"Sjs$#2>\.rDRnOuHQRQJe16p'^VNuML1bs!;<otXUaa@Y&Kq<mpcrZ;C"q%Z
+Q:dIqq.B!S`"\iF"TIW\N%#(+$WA%DX'G_%a_G\3I==L`eCB[LBUYmY='`s)[6E%+iL_L=+Z,0?=
+Kp+itE)oLE/de#`<?YGR.23,5Ki6m':anLAC5&!@U[V;t'g;tq_H0$"l)BIgI2,=bTH^EF<>:^\M
+Q/F4d8VGB]#n!k:mn;M.WZ=tAYES6/6*[TQ&;WJ<q0-I._a&+,uE9oKIV>68EHKWWuP,93N48RB9
+cHXU6;K\<H=@o8tg9,.9.E=Q-*%%<dCZ$.W:SQjeL8'HrU</Sqa2kf8qfn)R@@Z6dZ`bW#B.T9k0
+okCJ6SoNL>O#1"WWd()jX$;T$maBt,'s%8UK/iG36e!f`a?W3Os11_(G/`_chtP=D9dejqYN)O\T
+F,M0G>'H21T;WFHJBfn7fNL*,0n^_A24rU!3=$t@!l%hBK*D'n:,O5b\'V1AHW\`5RF='&[c;_j2
+RH^)"EudndTk!C>FW?s;NiTM;nT6ZM^<Tb,d+RZ:3d[DgkF`LS*-KUgkp/<&SQ+dHPNc=pEh/[pT
+l\g7FWNT/c;UXlH0I.HDk0qlUXSITFTd>gJS<ChO:2<tZGFmQ0c1e,#%Ib[?t,cJ9FVD_R=T'+2m
+<]+#.D@r^bJq/\-?^NcX:8@)f,rbK:P;AYW%@H%L02Sd/\f_6"4dk8.@0URDIDr2n0_>#'Y^Ji*f
+G"4:Q%XQU,-N2J<O`#+`T^5VVGjLaIN`a^ed'Rg`"*PEC]:1,dNR-76=GeAO&/R@#=B'?aop@[eo
+C*0ZYECU,kg9K"63ajq^kfpRL?H]uP3?kSqK9e\Sq,UR/feDt)%R9WI,PFG-PE]5FA*[[/oe"emI
+R5?7/PLef)d[>JW"H/k*B[O;N/-Zlq`R$rV(g3dQ@ggOj@\I""/I[Q*KkW9NYUgP*[`-\3Yuk/=(
+2F<(@UnA$Cb5^HSOI4s[tlRF(9tj+!fN72@WAhI/M7g,`RQ0A\60L]GDjo/@8U/i/S^317:YkrBI
+uC`S]02IYj'hs2LQOdAmck<$uH]JOc=*3[aAn<2S./_`itlaQo9")b@Y0mgFR1]S!AtKZaTC?2E&
+:oeg@WSfn;81S&j`"'AFLDYW:A^2J8N/k$jP->]"MNRn[=4[jc/82O2P9VRCd'1cB9Af&gJkfmIW
+>LRs.^d!(Qk"qIrVcp;Xg3N*Et#L-]:TK>gf%#:7'kqI=c*#9$m_pZA@=?3l$CBr0oj5<"8*<M"e
+6g1auL`?m7Z,=riLQb*bE-=bm/e4;eeKK.H3>;sILXP/?:cUWYC58-Cj7%5**Bjt(_q.1nl+)U&I
+2C":i$,cA>niWfMs<'@d9J"N]$&UBE1+8(/oqiPA`7+1/6s6^Q&Ft6G4Afq0##N[-#hPJKJ%V<aQ
+;=m],Y*q3OpCfB:%-0if^iW?#l:$9Aso8.:!uIQ-7XQG'UVT/oR*-jl=e"HsHl9SqlOWpQ.KA*jW
+i56h)"=W#fFZc"#b,HV?R2O-tdf1&%n7(*9p)d_kTWH+4o2&'nbGiHoB(!frmBkcsl<4:WF;a3b!
+MP=OVPp..>!*gt(!,PS]n'HVIZdc9:`Gs"6)O-`Asnb-WZ4s$98f0f&lq1q4_+3A0R,Pqmt'VCMK
+l8/.]HmV%gcd^#)RJE46F!&S<iFDa9I2nlEO6a.GnU*5Y^<b@XnCdVj5'rpCkMR$N*.@<:q'8.:T
+@E&`PPJI3EhAgsiH+`BI3(S;cdSfcH209\DkGVDj4!gOI>!,WJ/HWDO9,UeEkj@o#oEiE!TO/3?k
+T+;9EU6(=b%AD&$Q*N!Hu76^^4*H\,kmq045IO#AaKoJ6bDWYRcNk%KURb0n=dQ5SA#G8-:IF=hl
+m;&%DcW!V_+"i"8ch49Ol!=$RGg%VPr.!F<K"5R?V.L`u^..:`u6LC?P7OAUfP1(M\u-6[]V1rKZ
+fKpX%T&1_9'@YZL%S<-a,)mTtD68g!9a>P:LfnG)&qiE5e&/'a<6O5]+,U)?41uo:4Kj7"9OBY6f
+EXsTd*[+P)1SbM+KestAO>c/5dY3'9KSWrf(t"D++pJX"`%XN7(e(A8is75G&tqfh,E.F]KGcM*Y
+TahpG/Q/QM-*3V&aK]U@M@]jCa4Of>soO7O,+ti&TP`DJr!>n&oiq&,;'R2`&/a"\4%)DpP:Ta&Q
+(tZ,O1(d6kf*NBHo\Q?,SZgM!;m71&Vq<Ae63-$tGNh;2cDLNmV;_0m_&#`e^&%Qne1L.qTB'a"1
+_jQrT(aZ]=Qb2DK[)2C=75`IouCQmh).'?;)&LcNF"1$=o\jq<ls>\!>l>>,WMO""Q[0icFRVN,r
+@1bnHd2Wb\%`I-_G)G9I"k32gp&VFGq@/,ZCN.)q:nLl@Iq#rCJ^Y$Ei#Ckl#KX1B(Lult.=oD$V
+p!6gor#V*i:Zh"m@U]9u3JZMO*;Rhc&i`5c(WbMA3S^9X4-]5b$D()3$Q=7W$QnTjqd6*3H3n%I5
+=%mY,fg;0"=7K@TI,U2["M#&ShNkm&nVG^_E>Y,=<uN*b602$Q/F!j'>/umJtK8A#SM:e@DY2O8i
+S*7$-2,9qC*RZ3%(L.Q\6pKRZJoP&rM?h6CI=6W"P[.Fi#Z&8U)Vi$(ll'iL:scoMWVlIYs@F8<H
+i*.8%`2784YtBIT,Z4_:'kUs)`\P^/.OZ:M6!Q75SO.`G+bVg'Y['L-/u&u=kl_N]I@P]B<O;i^,
+2kbjXjjd_L2>Z.klCJ(1=9.<d,.:pXHV+Q$1e1%Sc-KUfHVL2:QP])G@dE<(WqAE2N+@FEkAgeOl
+$oMObTk-nQoSdL=OYP$51ZfQU`Zi=G=CsN1WsgpsS`+-r1Am)J7Zamu#W)/l;8sb(c8]E#\XYF<N
+,qIWEQQ9WXr2N)/YgCsB9X9pN%3kU;.mNsRZ)G[S+4Va1;4Vm:+o,]l/tStK,cmaR%r`$En$V!Ng
+;KCd;u0F7a<R*baIWr3K"k=B:7f@XE**dFcMfpamjG\3C1qC-d:9,6og$m39Q\/KRV'8Em?[Zc6X
+j]\`Vs5\""Z*Sl=c6EiPXB:7_"!Bl`&jD9aN,bPC9+"hauBTO/fV$ju'I@=_<1.SpMm"^8a<5VJK
+?(^75IZX@*I'eB^YJn9L3YUXT"ecfBrVSFk;('FfQK!8Wi&/?/lidt\1HdPbX;K+6Z$SDTc_6kC=
+\.o\]pO]^/;,@ui$gN=F5u[8*BF@!-?,=!8.-["Q-2eIUA5FJ:$qlhJ;2JI30%!9<-$m\?`$h%=Q
+mM>:X(5(:QRke"P#[?CZ7bZ>2C3go[Nm9SQ%UI\P,RG<&sjT]T=LIaP*0lX>&l(69!0IcafV?e\X
+/O,O-6O(=]1U!8t(oe8R(a7kt8Z96:J(EXQW_V'nZk(@T]='N%3>7EJ7FJWR*/m'h60D_Q9,+=;?
+`$]4+q%<3.S)MKOVSZ)R4C[M;*IXs0t"=%!dYMR_YJrG;"'O]7i$dY^[d<cP7_.rH(j`P&"IGZ7W
+Wc\f<n<RFdY/)#kV79B#]&8HMK@SOU,WYs=-28^?/AlPPVN,,eh8W@%4XYFR&2.k+G`i<1kfJUhj
+Ve/rheuWZ"RSAcKZ`OOKFu<^Q^*]j?eAO5bqIf#iR\](NPL`uRZC5Q'??<.rC@3rjc(h/9H.LJ&Y
+F;?N?.7APC:]jPNR6$f&0(HT;T#.nDAY8[%AO-8@GIM59H*PXBnOeeCG6^i%9CB@_/<@53";nm[p
+e+N2/F3/L2B<)Y\OL`p'jm:Tcn;52EqnH)Nohr6eZKna;V2jH,HbXBXg!c%?H7DiRq$d]Gd5nG=1
+-SC$6JL%73^k7;V4t81fH0\RjEf[#A2<Q>qi6125-?VCb9\XMo"D[ob5?(;"/2ij>djgm3)@f<T,
+\>IH+LbH<.-fsa@$LR,I3f`!">C.VUS/SWD)-#:'"j=Rj,U?160[QI`nQ=ikHnnMlBhCWTfVkn2)
+[Kmne%^Ded+a"2SjGmZ(dP:#`42r:Ea.u)kR!';eZOX<OhI1OX3p_l<LXWNnE')Vk?H8q\n(;dd*
+P7?9A)@l@*'3)>A,!n@W?^XeGGH7GNi_9pOa#SAMN3$Rg%":)3h@@7a/c!"G^$M8T8p)7g[PN$^X
+0@~>
+grestore
+% indexed colour image
+gsave 50 160 translate 200 100 scale
+[/Indexed /DeviceRGB 3 <FF0000 00FF00 0000FF FFFF00>] setcolorspace
+<< /ImageType 1 /Width 4 /Height 2 /BitsPerComponent 8 /Decode [0 255] /ImageMatrix [4 0 0 -2 0 2]
+   /DataSource <0001020303020100> >> image
+grestore
+% tiling pattern
+<< /PatternType 1 /PaintType 1 /TilingType 1 /BBox [0 0 20 20] /XStep 20 /YStep 20
+   /PaintProc { pop 1 0 0 setrgbcolor 0 0 10 10 rectfill 0 0 1 setrgbcolor 10 10 10 10 rectfill } >> matrix makepattern
+/P exch def
+gsave P setpattern 300 160 245 100 rectfill grestore
+% rotated text
+gsave 300 100 translate 20 rotate /Helvetica findfont 18 scalefont setfont 0 0 moveto (Rotated 20 degrees) show grestore
+% stdout message
+(Hello from PostScript) =
+showpage
+%%Page: 2 2
+<< /PageSize [842 595] >> setpagedevice
+/Helvetica findfont 40 scalefont setfont
+421 500 moveto (Page 2 - A4 landscape) cshow
+/Symbol findfont 24 scalefont setfont 100 400 moveto (abgdp) show
+/ZapfDingbats findfont 24 scalefont setfont 100 350 moveto (3456) show
+0.5 setgray 100 100 642 50 rectfill
+/Helvetica findfont 20 scalefont setfont 1 setgray 120 115 moveto (White text on grey) show
+showpage
+%%Trailer
+%%EOF

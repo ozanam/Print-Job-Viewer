@@ -1,0 +1,9 @@
+/target
+/dist
+*.png
+.DS_Store
+# generated samples that embed copies of system fonts (re-create with the scripts in samples/)
+samples/feature-test.xps
+samples/feature-test.pxl
+*.settings
+/.github
